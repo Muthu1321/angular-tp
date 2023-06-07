@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mynavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Link</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search" />
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<section class="container-fluid p-5">
+  <p class="fs-4">Angular Infinite Scroll</p>
+  <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollUpDistance]="1.5"
+    [infiniteScrollThrottle]="50"
+    (scrolledUp)="onUp()"
+  ></div>
+
+  <div>
+    Open the inspector to see the local/session storage keys:
+
+    <h3>Session Storage</h3>
+    <button type="button" (click)="setSession()">Set Session Storage</button>
+
+    <h3>Local Storage</h3>
+    <button type="button" (click)="setLocal()">Set Local Storage</button>
+
+    <h3>get Local Storage</h3>
+    <button type="button" (click)="getLocal()">get Local Storage</button>
+
+    <p>{{localName}}</p>
+
+    <h3>Clear</h3>
+    <button type="button" (click)="clear()">clear Storage</button>
+  </div>
+</section>
